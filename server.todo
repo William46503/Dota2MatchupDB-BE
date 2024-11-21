@@ -1,0 +1,68 @@
+{
+  "todotree": {
+    "tree": [
+      {
+        "key": 1658062744157,
+        "children": [
+          {
+            "key": 1658062792003,
+            "children": [],
+            "todo": {
+              "content": "bad match up -> counter by item",
+              "id": 1658062792003,
+              "level": "default",
+              "done": true
+            }
+          },
+          {
+            "key": 1658062767171,
+            "children": [],
+            "todo": {
+              "content": "goodmatchup -> good to team with",
+              "id": 1658062767171,
+              "level": "default",
+              "done": true
+            }
+          }
+        ],
+        "todo": {
+          "content": "change heromodel",
+          "id": 1658062744157,
+          "level": "default",
+          "done": true
+        }
+      },
+      {
+        "key": 1664891864485,
+        "children": [
+          {
+            "key": 1664891886015,
+            "children": [],
+            "todo": {
+              "content": "",
+              "id": 1664891886015,
+              "level": "default",
+              "done": false
+            }
+          }
+        ],
+        "todo": {
+          "content": "Add most useful items to build on that hero",
+          "id": 1664891864485,
+          "level": "default",
+          "done": false
+        }
+      }
+    ],
+    "expandKeys": [
+      1658062744157,
+      1658062767171,
+      1664891864485
+    ],
+    "schema": "https://github.com/Saber2pr/vsc-ext-todolist/blob/master/src/api/type.ts#L3",
+    "add_mode": "bottom",
+    "virtual": false,
+    "showLine": false,
+    "playFontSize": 24
+  }
+}
