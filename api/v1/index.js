@@ -22,6 +22,8 @@ setTimeout(() => {
   runFetchData();
 }, 2629746000);
 
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
 //Get all hero index
 app.get("/hero-index", (req, res) => {
   HeroModel.find((err, result) => {
