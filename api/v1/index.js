@@ -7,6 +7,7 @@ app.use(cors());
 const mongoose = require("mongoose");
 const HeroModel = require("../../models/Heroes");
 const { MatchupModel, MatchupDataModel } = require("../../models/MatchupModel");
+const { runFetchData } = require("../../fetchData");
 
 // If querySrv EREFUSED  Happens, change network IPv4 Tp to 8.8.8.8 and 8.8.0.0
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.khg9ypc.mongodb.net/Dota2App?retryWrites=true&w=majority`;
@@ -16,6 +17,10 @@ mongoose
     useNewUrlParser: true,
   })
   .catch((err) => console.log(err));
+
+setTimeout(() => {
+  runFetchData();
+}, 2629746000);
 
 //Get all hero index
 app.get("/hero-index", (req, res) => {

@@ -1,8 +1,5 @@
 const mongoose = require("mongoose");
 
-// mongoose.connect(
-//   "mongodb+srv://nextlevelpenguin:MongoLlw46503@cluster0.khg9ypc.mongodb.net/Dota2App?retryWrites=true&w=majority"
-// );
 const MatchplayedSchema = new mongoose.Schema({
   opponentID: {
     type: Number,
