@@ -52,6 +52,6 @@ app.get("/hero-data/search", (req, res) => {
   });
 });
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log(`Server is up`);
 });
