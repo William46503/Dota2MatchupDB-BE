@@ -16,11 +16,10 @@ mongoose
   .connect(uri, {
     useNewUrlParser: true,
   })
+  .then(() => {
+    runFetchData();
+  })
   .catch((err) => console.log(err));
-
-setTimeout(() => {
-  runFetchData();
-}, 2629746000);
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
