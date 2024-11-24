@@ -19,6 +19,7 @@ function populateMatchData() {
             console.log("Create new record by heroid: " + element.id);
             //Limit the number of APi call to not crash server
             // if (element.id < 5) {
+
             axios
               .get(`https://api.opendota.com/api/heroes/${element.id}/matchups`)
               .then((response) => {
