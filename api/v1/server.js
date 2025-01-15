@@ -7,17 +7,14 @@ app.use(cors());
 const mongoose = require("mongoose");
 const HeroModel = require("../../models/Heroes");
 const { MatchupModel, MatchupDataModel } = require("../../models/MatchupModel");
-const { runFetchData } = require("../../fetchData");
 
 // If querySrv EREFUSED  Happens, change network IPv4 Tp to 8.8.8.8 and 8.8.0.0
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@m0-cluster.dwmnj.mongodb.net/?retryWrites=true&w=majority&appName=M0-Cluster`;
+const uri = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@m0-cluster-shard-00-00.dwmnj.mongodb.net:27017,m0-cluster-shard-00-01.dwmnj.mongodb.net:27017,m0-cluster-shard-00-02.dwmnj.mongodb.net:27017/?ssl=true&replicaSet=atlas-78iagd-shard-0&authSource=admin&retryWrites=true&w=majority&appName=M0-Cluster`;
 
+mongoose.set("strictQuery", false);
 mongoose
   .connect(uri, {
     useNewUrlParser: true,
-  })
-  .then(() => {
-    runFetchData();
   })
   .catch((err) => console.log(err));
 
@@ -52,5 +49,5 @@ app.get("/hero-data/search", (req, res) => {
 });
 
 app.listen(process.env.PORT || 8080, () => {
-  console.log(`Server is up`);
+  console.log(`Server is up on port ${process.env.PORT}`);
 });

@@ -1,6 +1,9 @@
 const axios = require("axios");
-const { MatchupModel, MatchupDataModel } = require("./models/MatchupModel");
-const HeroModel = require("./models/Heroes");
+const {
+  MatchupModel,
+  MatchupDataModel,
+} = require("../../../models/MatchupModel");
+const HeroModel = require("../../../models/Heroes");
 
 function populateMatchData() {
   HeroModel.find((err, result) => {

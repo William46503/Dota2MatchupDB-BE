@@ -5,21 +5,16 @@ const { populateHeroModel } = require("./fetchHeroData");
 const { populateMatchData } = require("./fetchMatchData");
 
 function runFetchData() {
-  const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@m0-cluster.dwmnj.mongodb.net/?retryWrites=true&w=majority&appName=M0-Cluster`;
+  const uri = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@m0-cluster-shard-00-00.dwmnj.mongodb.net:27017,m0-cluster-shard-00-01.dwmnj.mongodb.net:27017,m0-cluster-shard-00-02.dwmnj.mongodb.net:27017/?ssl=true&replicaSet=atlas-78iagd-shard-0&authSource=admin&retryWrites=true&w=majority&appName=M0-Cluster`;
 
   mongoose
-    .connect(url)
+    .connect(uri)
     .then(() => {
       console.log("connected");
       populateHeroModel();
       populateMatchData();
     })
     .catch((e) => console.log(e));
-
-  setTimeout(() => {
-    mongoose.connection.close();
-  }, 60000);
-  // setInterval(() => {}, 2629746000);
 }
 
-module.exports = { runFetchData };
+runFetchData();

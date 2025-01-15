@@ -1,5 +1,5 @@
 const axios = require("axios");
-const HeroModel = require("./models/Heroes");
+const HeroModel = require("../../../models/Heroes");
 
 function populateHeroModel() {
   const updatedHeroList = [];
